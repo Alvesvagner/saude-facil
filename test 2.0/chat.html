@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Saúde Fácil - Atendimento Virtual</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Botão para voltar -->
+    <div class="back-nav">
+      <button onclick="location.href='index.html'" class="btn-back">← Voltar ao Início</button>
+    </div>
+
+    <div class="chat-wrap">
+      <!-- Header do Chat -->
+      <div class="chat-header">
+        <img src="logo.png" alt="Saúde Fácil Logo" style="height:54px">
+        <div class="chat-info">
+          <strong>Atendimento Virtual 24h</strong><br>
+          <small>🟢 Conectado • Dr. Virtual IA</small>
+        </div>
+        <div class="header-actions">
+          <button class="btn-emergency" onclick="ligarSamu()">🚨 Ligar 192</button>
+        </div>
+      </div>
+
+      <!-- Status do atendimento -->
+      <div class="chat-status">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span>Atendimento iniciado • Resposta em tempo real</span>
+        </div>
+      </div>
+
+      <!-- Área do Chat -->
+      <div id="chat-box" class="chat-box" role="log" aria-live="polite">
+        <!-- Mensagem inicial do bot -->
+        <div class="msg bot welcome-msg">
+          <div class="msg-avatar">🩺</div>
+          <div class="msg-content">
+            <strong>Olá! Sou o Dr. Virtual da Saúde Fácil</strong><br>
+            Estou aqui para ajudar com orientações médicas básicas. 
+            <br><br>
+            ⚠️ <em>Em caso de emergência, clique em "Ligar 192" acima.</em>
+            <br><br>
+            Como posso ajudá-lo hoje?
+          </div>
+        </div>
+      </div>
+
+      <!-- Sugestões rápidas -->
+      <div class="quick-suggestions">
+        <button class="suggestion-btn" onclick="enviarSugestao('Estou com dor de cabeça')">🤕 Dor de cabeça</button>
+        <button class="suggestion-btn" onclick="enviarSugestao('Estou com febre')">🌡️ Febre</button>
+        <button class="suggestion-btn" onclick="enviarSugestao('Problemas digestivos')">🍽️ Digestão</button>
+        <button class="suggestion-btn" onclick="enviarSugestao('Preciso de orientações gerais')">💡 Orientações</button>
+      </div>
+
+      <!-- Input do Chat -->
+      <div class="chat-input">
+        <input 
+          id="chat-input-field" 
+          placeholder="Digite sua dúvida ou sintoma..." 
+          aria-label="Mensagem do usuário"
+          maxlength="500"
+        >
+        <button onclick="enviarChat()" class="btn-send">
+          <span class="send-icon">➤</span>
+          Enviar
+        </button>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="chat-disclaimer">
+        <small>
+          ⚠️ Este é um serviço de orientação. Não substitui consulta médica presencial. 
+          Em emergências, procure atendimento médico imediatamente.
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
